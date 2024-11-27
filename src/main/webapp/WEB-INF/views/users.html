@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+  <meta charset="UTF-8">
+  <title>Users</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    h1 {
+      color: #333;
+      text-align: center;
+    }
+
+    a {
+      color: #333;
+      text-decoration: none;
+      padding: 10px;
+      margin: 10px;
+      border: 1px solid #333;
+      border-radius: 5px;
+    }
+
+    a:hover {
+      background-color: #333;
+      color: #fff;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 20px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    }
+
+    th, td {
+      padding: 12px;
+      text-align: left;
+      border-bottom: 1px solid #ddd;
+    }
+
+    th {
+      background-color: #333;
+      color: #fff;
+    }
+
+    tr:nth-child(even) {
+      background-color: #f9f9f9;
+    }
+
+    tr:hover {
+      background-color: #f1f1f1;
+    }
+
+    td a {
+      margin-right: 10px;
+    }
+  </style>
+</head>
+<body>
+
+<h1>Users</h1>
+<a href="/users/add">Add User</a>
+
+<table>
+  <thead>
+  <tr>
+    <th>ID</th>
+    <th>Name</th>
+    <th>Email</th> <!-- New Email Column -->
+    <th>Actions</th>
+  </tr>
+  </thead>
+  <tbody>
+  <th:block th:each="user : ${users}">
+    <tr>
+      <td th:text="${user.id}"></td>
+      <td th:text="${user.name}"></td>
+      <td th:text="${user.email}"></td> <!-- Display Email -->
+      <td>
+        <a th:href="@{/users/edit/{id}(id=${user.id})}">Edit</a>
+        <a th:href="@{/users/delete/{id}(id=${user.id})}" onclick="return confirm('Are you sure?');">Delete</a>
+      </td>
+    </tr>
+  </th:block>
+  </tbody>
+</table>
+
+</body>
+</html>

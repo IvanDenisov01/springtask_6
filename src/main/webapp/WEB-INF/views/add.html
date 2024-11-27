@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org/" xmlns:form="http://www.w3.org/1999/xhtml">
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Add User</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f4f4f4;
+      margin: 0;
+      padding: 20px;
+    }
+
+    #user-form {
+      width: 300px;
+      margin: 50px auto;
+      padding: 20px;
+      background-color: #fff;
+      border-radius: 8px;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      text-align: center;
+    }
+
+    h2 {
+      color: #333;
+      margin-bottom: 20px;
+    }
+
+    label {
+      color: #333;
+      display: block;
+      margin-bottom: 8px;
+      font-weight: bold;
+      text-align: left;
+    }
+
+    input[type="text"] {
+      width: 100%;
+      padding: 10px;
+      margin-bottom: 20px;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+      background-color: #fafafa;
+    }
+
+    button {
+      background-color: #333;
+      color: #fff;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 5px;
+      font-size: 16px;
+      cursor: pointer;
+      width: 100%;
+      transition: background-color 0.3s;
+    }
+
+    button:hover {
+      background-color: #555;
+    }
+
+    button:focus {
+      outline: none;
+    }
+  </style>
+</head>
+<body>
+
+<div id="user-form">
+  <h2>Add User</h2>
+  <form method="post">
+    <label for="name">Name</label>
+    <input type="text" id="name" name="name"><br>
+
+    <label for="email">Email</label>
+    <input type="text" id="email" name="email"><br>
+
+    <button type="submit" name="addUser" value="addUser">Add User</button>
+  </form>
+</div>
+
+</body>
+</html>
